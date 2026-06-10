@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UGC AI Video Maker">
+  <title>UGC Video Maker</title>
+  <link rel="icon" type="image/png" href="/images/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" class="topbar-brand" title="UGC Maker">
+      <img class="topbar-brand-img" src="/images/logo.png" alt="UGC Maker">
+    </a>
+    <nav class="topbar-nav">
+      <a href="/" class="topbar-link<%= page === 'create' ? ' active' : '' %>">
+        <i class="ti ti-movie"></i>
+        <span>Create</span>
+      </a>
+      <a href="/history" class="topbar-link<%= page === 'history' ? ' active' : '' %>">
+        <i class="ti ti-clock"></i>
+        <span>History</span>
+      </a>
+    </nav>
+    <div class="topbar-account">
+      <% if (page === 'create') { %>
+        <button class="topbar-icon-btn" id="queue-btn" type="button" title="Queue">
+          <i class="ti ti-list-check"></i>
+          <span class="queue-badge" id="queue-badge">0</span>
+        </button>
+        <span class="topbar-divider" aria-hidden="true"></span>
+      <% } %>
+      <button class="topbar-avatar" id="avatar-btn" type="button" title="Account">
+        <img src="/images/avatar.jpg" alt="Account">
+      </button>
+      <div class="avatar-menu" id="avatar-menu">
+        <a href="/settings"><i class="ti ti-settings"></i> Settings</a>
+      </div>
+    </div>
+  </header>
+  <main class="main-content">
+  <script>
+    (function() {
+      var avatarBtn = document.getElementById('avatar-btn');
+      var avatarMenu = document.getElementById('avatar-menu');
+      avatarBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        avatarMenu.classList.toggle('show');
+      });
+      document.addEventListener('click', function() {
+        avatarMenu.classList.remove('show');
+      });
+    })();
+  </script>

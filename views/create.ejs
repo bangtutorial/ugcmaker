@@ -1,0 +1,259 @@
+<%- include('partials/header') %>
+
+<div class="ugc-page">
+  <section class="ugc-builder">
+    <div class="ugc-builder-scroll">
+      <section class="ugc-step">
+        <div class="ugc-step-head">
+          <h2>1. Creator</h2>
+          <button class="library-switch" type="button" data-tab="library" data-type="model">Library</button>
+        </div>
+        <div class="upload-grid ugc-reference-row" id="grid-model">
+          <label class="upload-add ugc-add-card" id="add-model" title="Upload creator reference">
+            <i class="ti ti-plus"></i>
+            <span>Creator</span>
+            <input type="file" accept="image/*" multiple data-type="model">
+          </label>
+        </div>
+      </section>
+
+      <section class="ugc-step">
+        <div class="ugc-step-head">
+          <h2>2. Product</h2>
+          <button class="library-switch" type="button" data-tab="library" data-type="product">Library</button>
+        </div>
+        <div class="upload-grid ugc-product-row" id="grid-product">
+          <label class="upload-add ugc-upload-box" id="add-product" title="Upload product photos">
+            <i class="ti ti-plus"></i>
+            <span>Product</span>
+            <input type="file" accept="image/*" multiple data-type="product">
+          </label>
+        </div>
+        <div class="product-brief-grid">
+          <div>
+            <label class="form-label">Product Name</label>
+            <input class="form-input recipe-input" id="product-name" value="" placeholder="Glow Serum, Mini Blender, Protein Snack">
+          </div>
+          <div>
+            <label class="form-label">Target Market</label>
+            <input class="form-input recipe-input" id="target-audience" value="" placeholder="Young moms, office workers, skincare beginners">
+          </div>
+        </div>
+      </section>
+
+      <section class="ugc-step">
+        <div class="ugc-step-head">
+          <h2>3. Script</h2>
+        </div>
+        <div class="form-group">
+          <textarea class="form-input recipe-input ugc-script-input" id="script-input" maxlength="1000" placeholder="Write the UGC script or talking points...">Hai semuanya! Aku mau rekomendasiin produk ini yang bikin konten terasa lebih natural dan mudah dipahami.</textarea>
+          <div class="script-count"><span id="script-count">0</span>/1000</div>
+        </div>
+      </section>
+
+      <section class="ugc-step">
+        <div class="ugc-step-head">
+          <h2>4. Background</h2>
+          <button class="library-switch" type="button" data-tab="library" data-type="background">Library</button>
+        </div>
+        <div class="upload-grid ugc-background-row" id="grid-background">
+          <label class="upload-add ugc-add-card" id="add-background" title="Upload background reference">
+            <i class="ti ti-plus"></i>
+            <span>Background</span>
+            <input type="file" accept="image/*" multiple data-type="background">
+          </label>
+        </div>
+      </section>
+
+      <section class="ugc-step">
+        <div class="ugc-step-head">
+          <h2>5. UGC Settings</h2>
+        </div>
+        <div class="ugc-settings-grid">
+          <div>
+            <label class="form-label">Language</label>
+            <select class="form-select recipe-input" id="language-style">
+              <option value="Indonesian">Indonesian</option>
+              <option value="English">English</option>
+              <option value="Indonesian with casual Jakartan tone">Casual Indonesian</option>
+              <option value="English with casual social commerce tone">Casual English</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">UGC Type</label>
+            <select class="form-select recipe-input" id="ugc-format-select">
+              <option value="problem-solution">Problem Solution</option>
+              <option value="product demo">Product Demo</option>
+              <option value="unboxing">Unboxing</option>
+              <option value="testimonial review">Testimonial</option>
+              <option value="asmr product close-up">ASMR</option>
+              <option value="affiliate hard sell">Affiliate Sell</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">Voice Tone</label>
+            <select class="form-select recipe-input" id="audio-style">
+              <option value="natural voiceover energy with product handling sound effects synced to motion">Natural</option>
+              <option value="soft ASMR whisper voice with close-mic product foley, gentle handling sounds, and quiet pauses">ASMR</option>
+              <option value="no voice, only natural product sound effects and optional music">No voice</option>
+              <option value="upbeat social ad pacing with satisfying product sound effects">Energetic</option>
+              <option value="calm conversational voiceover with light ambience">Calm</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">Music</label>
+            <select class="form-select recipe-input" id="music-style">
+              <option value="with subtle upbeat background music">With music</option>
+              <option value="without background music, use voice and product sound effects only">No music</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="ugc-step">
+        <div class="ugc-step-head">
+          <h2>6. Output</h2>
+        </div>
+        <div class="ugc-output-grid">
+          <div class="ugc-model-field">
+            <label class="form-label">Model</label>
+            <select class="recipe-input ugc-model-native" id="ai-model-select" aria-hidden="true" tabindex="-1">
+              <option value="seedance-2.0">Seedance 2.0</option>
+              <option value="seedance-2.0-fast">Seedance 2.0 Fast</option>
+            </select>
+            <div class="model-select-wrap compact-model-select" id="model-select-wrap">
+              <button class="model-selector" id="model-selector" type="button" aria-haspopup="listbox" aria-expanded="false">
+                <span class="model-selector-icon"><img src="/images/Dreamina Seedance icon.png" alt=""></span>
+                <span class="model-selector-info">
+                  <span class="model-selector-name" id="model-display-name">Seedance 2.0</span>
+                  <span class="model-selector-desc" id="model-display-desc">Quality mode</span>
+                </span>
+                <i class="ti ti-chevron-right model-selector-arrow"></i>
+              </button>
+              <div class="model-options" id="model-options" role="listbox">
+                <button class="model-option active" type="button" role="option" aria-selected="true" data-value="seedance-2.0" data-name="Seedance 2.0" data-desc="Quality mode">
+                  <img src="/images/Dreamina Seedance icon.png" alt="">
+                  <span><strong>Seedance 2.0</strong><small>Quality mode</small></span>
+                  <i class="ti ti-check"></i>
+                </button>
+                <button class="model-option" type="button" role="option" aria-selected="false" data-value="seedance-2.0-fast" data-name="Seedance 2.0 Fast" data-desc="Fast draft mode">
+                  <img src="/images/Dreamina Seedance icon.png" alt="">
+                  <span><strong>Seedance 2.0 Fast</strong><small>Fast draft mode</small></span>
+                  <i class="ti ti-check"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="ugc-output-controls">
+          <div>
+            <label class="form-label">Resolution</label>
+            <select class="form-select recipe-input" id="resolution-select">
+              <option value="720p">720p</option>
+              <option value="1080p">1080p</option>
+              <option value="480p">480p</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">Ratio</label>
+            <select class="form-select recipe-input" id="ratio-select">
+              <option value="9:16">9:16 Vertical</option>
+              <option value="16:9">16:9 Landscape</option>
+              <option value="1:1">1:1 Square</option>
+              <option value="4:3">4:3</option>
+              <option value="3:4">3:4</option>
+              <option value="adaptive">Adaptive</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">Duration</label>
+            <select class="form-select recipe-input" id="duration-select">
+              <% for (let i = 4; i <= 15; i++) { %>
+                <option value="<%= i %>" <%= i === 10 ? 'selected' : '' %>><%= i %>s</option>
+              <% } %>
+            </select>
+            <input type="range" id="duration-slider" class="recipe-input hidden-range" min="4" max="15" step="1" value="10">
+            <span id="duration-display" class="range-value hidden-duration-value">10s</span>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="ugc-section-divider"></div>
+
+      <details class="ugc-advanced">
+        <summary><span>Advanced prompt</span><i class="ti ti-chevron-down"></i></summary>
+        <div class="prompt-tools">
+          <button class="btn btn-secondary btn-sm" id="copy-prompt-btn" type="button"><i class="ti ti-copy"></i> Copy</button>
+        </div>
+        <div class="prompt-editor-wrap">
+          <div class="prompt-editor form-input prompt-preview" id="prompt-editor" contenteditable="true" spellcheck="false"></div>
+          <div class="mention-menu" id="mention-menu"></div>
+        </div>
+        <textarea class="form-input prompt-preview-hidden" id="prompt-input" spellcheck="false"></textarea>
+      </details>
+
+      <div class="hidden-create-fields">
+        <select class="recipe-input" id="product-category"><option value="skincare">Skincare</option></select>
+        <input class="recipe-input" id="product-benefit" value="produk terlihat jelas dan mudah dipahami">
+        <select class="recipe-input" id="creator-vibe"><option value="friendly TikTok affiliate creator">Friendly TikTok</option><option value="honest beauty reviewer">Beauty reviewer</option><option value="warm mom creator">Mom creator</option><option value="clean tech reviewer">Tech reviewer</option><option value="premium lifestyle presenter">Premium lifestyle</option></select>
+        <select class="recipe-input" id="camera-style"><option value="handheld close-up camera with natural small movements">Handheld close-up</option><option value="smooth dolly push-in toward the product">Dolly push-in</option><option value="top-down table shot with clean framing">Top-down table</option><option value="macro product detail shots with gentle focus pulls">Macro details</option><option value="dynamic TikTok-style quick cuts">Dynamic quick cuts</option></select>
+        <select class="recipe-input" id="motion-style"><option value="product reveal, hand interaction, and stable close-up demonstration">Reveal + hand demo</option><option value="slow product rotation with label staying readable">Product rotation</option><option value="unboxing, lifting the product, and showing texture">Unbox + texture</option><option value="application demo with realistic hand movement">Application demo</option><option value="before-after style reveal with quick transition">Before-after reveal</option></select>
+        <select class="recipe-input" id="lighting-style"><option value="bright natural morning light, clean home setting">Natural morning</option><option value="soft studio lighting with clean shadows">Clean studio</option><option value="warm home lighting with cozy lifestyle mood">Warm home</option><option value="premium dark studio lighting with glossy highlights">Premium dark</option><option value="colorful social commerce lighting">Colorful TikTok</option></select>
+        <select class="recipe-input" id="cta-style"><option value="soft CTA to check the product link">Soft CTA</option><option value="affiliate CTA to check the product link">Product link</option><option value="limited promo CTA without exaggerated claims">Promo CTA</option><option value="save and compare CTA">Save & compare</option></select>
+      </div>
+    </div>
+
+    <div class="ugc-builder-footer">
+      <button class="btn btn-secondary" id="queue-cancel-btn" type="button" hidden>Cancel</button>
+      <button class="btn btn-primary" id="generate-btn" type="button">Create Video</button>
+      <button class="btn btn-secondary" id="add-queue-btn" type="button">Add to Queue</button>
+    </div>
+  </section>
+
+  <section class="ugc-preview" id="panel-center">
+    <div class="ugc-preview-head">
+      <h1>Preview</h1>
+    </div>
+    <div class="ugc-preview-frame">
+      <div class="preview-empty" id="preview-empty">
+        <i class="ti ti-movie"></i>
+        <span>Video preview will appear here</span>
+      </div>
+      <div id="video-results"></div>
+    </div>
+  </section>
+
+  <aside class="ugc-videos">
+    <div class="ugc-videos-head">
+      <h2>My Videos</h2>
+    </div>
+    <div class="history-strip" id="history-strip"></div>
+    <a class="btn btn-secondary ugc-all-videos" href="/history">View all videos</a>
+  </aside>
+</div>
+
+<aside class="queue-panel" id="queue-panel" aria-hidden="true">
+  <div class="queue-panel-head">
+    <div>
+      <h2>Queue</h2>
+      <p id="queue-summary">No items</p>
+    </div>
+    <button class="icon-btn" id="queue-close-btn" type="button" title="Close"><i class="ti ti-x"></i></button>
+  </div>
+  <div class="queue-list" id="queue-list"></div>
+  <div class="queue-panel-footer">
+    <button class="btn btn-secondary" id="batch-stop-btn" type="button" hidden>Stop After Current</button>
+    <button class="btn btn-primary" id="batch-start-btn" type="button">Start Batch</button>
+  </div>
+</aside>
+<div class="queue-backdrop" id="queue-backdrop"></div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  window.__prefillData = <%- JSON.stringify(prefillData || null) %>;
+  window.__settings = <%- JSON.stringify(settings || {}) %>;
+</script>
+<script src="/js/create.js"></script>
+
+<%- include('partials/footer') %>

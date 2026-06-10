@@ -1,0 +1,172 @@
+<%- include('partials/header') %>
+
+<div class="ugc-page dummy-page">
+  <section class="ugc-builder">
+    <div class="ugc-builder-scroll">
+      <section class="ugc-step">
+        <div class="ugc-step-head">
+          <h2>1. Creator</h2>
+          <button class="library-switch" type="button">Library</button>
+        </div>
+        <div class="upload-grid ugc-reference-row">
+          <div class="upload-item selected"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=220&q=80" alt=""></div>
+          <label class="upload-add ugc-add-card">
+            <i class="ti ti-plus"></i>
+            <span>Creator</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="ugc-step">
+        <div class="ugc-step-head">
+          <h2>2. Product</h2>
+          <button class="library-switch" type="button">Library</button>
+        </div>
+        <div class="upload-grid ugc-product-row">
+          <div class="upload-item selected"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=220&q=80" alt=""></div>
+          <label class="upload-add ugc-upload-box">
+            <i class="ti ti-plus"></i>
+            <span>Product</span>
+          </label>
+        </div>
+        <div class="product-brief-grid">
+          <div>
+            <label class="form-label">Product Name</label>
+            <input class="form-input recipe-input" value="Glow Serum Pro">
+          </div>
+          <div>
+            <label class="form-label">Target Market</label>
+            <input class="form-input recipe-input" value="Skincare beginners, affiliate buyers">
+          </div>
+        </div>
+      </section>
+
+      <section class="ugc-step">
+        <div class="ugc-step-head">
+          <h2>3. Script</h2>
+        </div>
+        <textarea class="form-input recipe-input ugc-script-input">Hai semuanya! Aku mau tunjukin kenapa serum ini cocok buat kulit yang terlihat kusam dan butuh glow cepat.</textarea>
+        <div class="script-count">148/1000</div>
+      </section>
+
+      <section class="ugc-step">
+        <div class="ugc-step-head">
+          <h2>4. Background</h2>
+          <button class="library-switch" type="button">Library</button>
+        </div>
+        <div class="upload-grid ugc-background-row">
+          <div class="upload-item selected"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=220&q=80" alt=""></div>
+          <label class="upload-add ugc-add-card">
+            <i class="ti ti-plus"></i>
+            <span>Background</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="ugc-step">
+        <div class="ugc-step-head">
+          <h2>5. UGC Settings</h2>
+        </div>
+        <div class="ugc-settings-grid">
+          <div>
+            <label class="form-label">Language</label>
+            <select class="form-select recipe-input"><option>Indonesian</option></select>
+          </div>
+          <div>
+            <label class="form-label">UGC Type</label>
+            <select class="form-select recipe-input"><option>Product Demo</option></select>
+          </div>
+          <div>
+            <label class="form-label">Voice Tone</label>
+            <select class="form-select recipe-input"><option>Natural</option></select>
+          </div>
+          <div>
+            <label class="form-label">Music</label>
+            <select class="form-select recipe-input"><option>With music</option></select>
+          </div>
+        </div>
+      </section>
+
+      <section class="ugc-step">
+        <div class="ugc-step-head">
+          <h2>6. Output</h2>
+        </div>
+        <div class="ugc-output-grid">
+          <div class="ugc-model-field">
+            <label class="form-label">Model</label>
+            <div class="model-select-wrap compact-model-select">
+              <button class="model-selector" type="button">
+                <span class="model-selector-icon"><img src="/images/Dreamina Seedance icon.png" alt=""></span>
+                <span class="model-selector-info">
+                  <span class="model-selector-name">Seedance 2.0 Fast</span>
+                  <span class="model-selector-desc">Fast draft mode</span>
+                </span>
+                <i class="ti ti-chevron-right model-selector-arrow"></i>
+              </button>
+            </div>
+          </div>
+          <div class="ugc-output-controls">
+            <div>
+              <label class="form-label">Resolution</label>
+              <select class="form-select recipe-input"><option>720p</option></select>
+            </div>
+            <div>
+              <label class="form-label">Ratio</label>
+              <select class="form-select recipe-input"><option>9:16 Vertical</option></select>
+            </div>
+            <div>
+              <label class="form-label">Duration</label>
+              <select class="form-select recipe-input"><option>5s</option></select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <details class="ugc-advanced">
+        <summary><span>Advanced prompt</span><i class="ti ti-chevron-down"></i></summary>
+      </details>
+    </div>
+
+    <div class="ugc-builder-footer">
+      <button class="btn btn-primary" type="button">Create Video</button>
+      <button class="btn btn-secondary" type="button">Add to Queue</button>
+    </div>
+  </section>
+
+  <section class="ugc-preview" id="panel-center">
+    <div class="ugc-preview-head">
+      <h1>Preview</h1>
+    </div>
+    <div class="ugc-preview-frame">
+      <div id="dummy-preview"></div>
+    </div>
+  </section>
+
+  <aside class="ugc-videos dummy-videos">
+    <div class="ugc-videos-head">
+      <h2>My Videos</h2>
+    </div>
+    <div class="history-strip" id="dummy-videos"></div>
+    <a class="btn btn-secondary ugc-all-videos" href="/history">View all videos</a>
+  </aside>
+
+  <aside class="queue-panel" id="queue-panel" aria-hidden="true">
+    <div class="queue-panel-head">
+      <div>
+        <h2>Queue</h2>
+        <p>15 queued · batch preview</p>
+      </div>
+      <button class="icon-btn" id="queue-close-btn" type="button" title="Close"><i class="ti ti-x"></i></button>
+    </div>
+    <div class="queue-list" id="dummy-queue"></div>
+    <div class="queue-panel-footer">
+      <button class="btn btn-primary" type="button">Start Batch</button>
+    </div>
+  </aside>
+</div>
+
+<div class="queue-backdrop" id="queue-backdrop"></div>
+
+<script src="/js/create-dummy.js"></script>
+
+<%- include('partials/footer') %>

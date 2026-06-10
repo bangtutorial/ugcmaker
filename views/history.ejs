@@ -1,0 +1,75 @@
+<%- include('partials/header') %>
+
+<div class="page-history">
+  <div class="page-header">
+    <div>
+      <h1 class="page-title">History</h1>
+      <p class="history-count" id="history-count">0 videos</p>
+    </div>
+    <div class="search-wrap">
+      <i class="ti ti-search"></i>
+      <input type="text" class="search-input" id="search-input" placeholder="Search videos">
+    </div>
+  </div>
+  <div class="video-grid" id="video-grid"></div>
+  <div class="empty-state" id="empty-state" style="display:none;">
+    <i class="ti ti-movie"></i>
+    <span>No videos yet</span>
+  </div>
+</div>
+
+<div class="history-toast" id="history-toast"></div>
+
+<div class="modal-overlay video-viewer-overlay" id="video-modal">
+  <div class="video-viewer-modal">
+    <button class="modal-close video-modal-close" id="video-modal-close" type="button" aria-label="Close">
+      <i class="ti ti-x"></i>
+    </button>
+    <div class="video-viewer-player">
+      <video id="modal-video-player" controls playsinline preload="metadata"></video>
+    </div>
+    <aside class="video-viewer-detail">
+      <div class="history-status-row">
+        <span class="history-status-dot" id="modal-status-dot"></span>
+        <span id="modal-status">Completed</span>
+      </div>
+      <h2 id="modal-title">UGC Video</h2>
+      <div class="video-viewer-prompt-wrap" id="modal-prompt-wrap">
+        <p class="video-viewer-prompt" id="modal-prompt"></p>
+        <button class="prompt-more-btn" id="modal-prompt-toggle" type="button" hidden>Show more</button>
+      </div>
+      <div class="history-detail-grid">
+        <div><span>Resolution</span><strong id="modal-resolution">-</strong></div>
+        <div><span>Ratio</span><strong id="modal-ratio">-</strong></div>
+        <div><span>Duration</span><strong id="modal-duration">-</strong></div>
+        <div><span>Model</span><strong id="modal-model">-</strong></div>
+        <div><span>Created</span><strong id="modal-date">-</strong></div>
+      </div>
+      <div class="video-viewer-actions">
+        <button class="btn btn-secondary" id="modal-edit" type="button">
+          <i class="ti ti-edit"></i>
+          Edit
+        </button>
+        <button class="btn btn-secondary" id="modal-delete" type="button">
+          <i class="ti ti-trash"></i>
+          Delete
+        </button>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="modal-overlay" id="delete-modal">
+  <div class="modal">
+    <div class="modal-title">Delete Video</div>
+    <div class="modal-text">This action cannot be undone. Are you sure?</div>
+    <div class="modal-actions">
+      <button class="btn btn-secondary" id="delete-cancel">Cancel</button>
+      <button class="btn btn-danger" id="delete-confirm">Delete</button>
+    </div>
+  </div>
+</div>
+
+<script src="/js/history.js"></script>
+
+<%- include('partials/footer') %>
