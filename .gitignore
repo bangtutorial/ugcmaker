@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Local database
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# User uploads and generated media
+uploads/
+downloads/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime and cache
+.cache/
+.tmp/
+tmp/
+temp/
+.nodemon*
+
+# Build outputs
+dist/
+build/
+out/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Archives and local handoff files
+*.rar
+*.zip
+*.7z
+
