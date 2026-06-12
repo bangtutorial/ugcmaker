@@ -1,11 +1,13 @@
 # UGC Video Maker
 
 ![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/Express-4.x-000000?logo=express&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-local-003B57?logo=sqlite&logoColor=white)
 ![EJS](https://img.shields.io/badge/EJS-templates-B4CA65)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
+<img width="3092" height="933" alt="a" src="https://github.com/user-attachments/assets/01576cc4-ecae-440a-83ad-a3072dabc3f2" />
+
+<p></p>
 UGC Video Maker is a local-first web application for generating affiliate-style UGC videos with the BytePlus ModelArk Seedance 2.0 API. It is designed for creators, affiliate teams, and product marketers who need a simple workflow: upload product references, choose a creator/background reference, write a short script, and generate a ready-to-review video.
 
 Need API access or a Seedance 2.0 package? Open the <a href="https://bit.ly/4atg2fL" target="_blank">BytePlus ModelArk console</a>
